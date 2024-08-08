@@ -1,31 +1,25 @@
 #!/usr/bin/python3
-"Returns Pascal's triangle"
+"""An Implementation of Pascals triangle"""
 
 
 def pascal_triangle(n):
     """
-    Returns a list of lists of integers representing the Pascals triangle of n
-    """
+    Returns a list of lists of integers representing the triangle
 
-    triangle = []
+    n(int): Number of rows in the triangle
+
+    returns: List of lists
+    """
 
     if n <= 0:
         return []
 
-    for n in range(n):
+    res = [[1]]
+
+    for i in range(n - 1):
+        temp = [0] + res[-1] + [0]
         row = []
-        for k in range(n + 1):
-            coeff = factorial(n) // (factorial(k) * factorial(n - k))
-            row.append(coeff)
-        triangle.append(row)
-
-        return triangle
-
-
-def factorial(n):
-    if n == 0:
-        return 1
-    result = 1
-    for i in range(1, n + 1):
-        result *= i
-    return result
+        for j in range(len(res[-1]) + 1):
+            row.append(temp[j] + temp[j + 1])
+        res.append(row)
+    return res
