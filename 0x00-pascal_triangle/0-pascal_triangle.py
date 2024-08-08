@@ -19,6 +19,7 @@ def pascal_triangle(n):
 
         return triangle
 
+
 def factorial(n):
     if n == 0:
         return 1
