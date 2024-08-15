@@ -4,7 +4,7 @@
 
 def canUnlockAll(boxes):
     """
-    Returns the length of the unlocked boxes if it 
+    Returns the length of the unlocked boxes if it
     equals the length of the boxes
     """
 
