@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """ A function that determines whether boxes can be opened using a key"""
 
+
 def canUnlockAll(boxes):
     """
-    Returns the length of the unlocked boxes if it equals the length of the boxes
+    Returns the length of the unlocked boxes if it 
+    equals the length of the boxes
     """
 
     keys = set()
