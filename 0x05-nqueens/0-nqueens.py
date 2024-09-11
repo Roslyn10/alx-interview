@@ -58,4 +58,6 @@ if __name__ == "__main__":
 
     sol = Solution()
     output = sol.NQueens(n)
-    print(output)
+
+    for solution in output:
+        print(solution)
