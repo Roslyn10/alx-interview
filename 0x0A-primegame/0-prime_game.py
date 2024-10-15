@@ -23,26 +23,17 @@ def isWinner(x, nums):
 
         return [p for p in range(2, n + 1) if is_prime[p]]
 
-    maria_wins = 0
-    ben_wins = 0
+    Maria = 0
+    Ben = 0
 
-    for n in nums:
-        primes = generate_primes(n)
-        turn = 0
-
-        while primes:
-            current_prime = primes.pop(0)
-            primes = [p for p in primes if p % current_prime != 0]
-            turn = 1 - turn
-
-        if turn == 1:
-            ben_wins += 1
+    for i in range(x):
+        prime = generate_primes(nums[i])
+        if len(prime) % 2 == 0:
+            Ben += 1
         else:
-            maria_wins += 1
-
-        if maria_wins > ben_wins:
-            return "Maria"
-        elif ben_wins > maria_wins:
-            return "Ben"
-        else:
-            return None
+            Maria += 1
+    if Maria > Ben:
+        return 'Maria'
+    elif Ben > Maria:
+        return 'Ben'
+    return None
